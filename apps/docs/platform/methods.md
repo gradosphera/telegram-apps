@@ -206,6 +206,9 @@ class [Message](https://core.telegram.org/bots/api#message).
 |-------|----------|----------------------------------------------------------------------|
 | data  | `string` | Data to send to a bot. Should not have size of more than 4096 bytes. |
 
+> [!WARNING]
+> This method only works when the mini app was opened via [KeyboardButton](https://core.telegram.org/bots/webapps#keyboard-button-mini-apps).
+
 ### `web_app_device_storage_clear`
 
 Available since: **v9.0**
