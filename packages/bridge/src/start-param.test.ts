@@ -71,6 +71,15 @@ describe('decodeStartParam', () => {
   it('should apply JSON.parse to the decoded value if the second argument is "json"', () => {
     expect(decodeStartParam('IlRlbGVncmFtIEtydXRhIg==', 'json')).toBe('Telegram Kruta');
   });
+
+  it('should correctly decode a value returned from createStartParam', () => {
+    const value = {
+      string: 'gen-view',
+      number: -3,
+      array: [1, 'test', { field: 1 }, []],
+    };
+    expect(decodeStartParam(createStartParam(value), 'json')).toMatchObject(value);
+  });
 });
 
 describe('decodeStartParamFp', () => {
