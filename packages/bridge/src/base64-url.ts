@@ -14,9 +14,11 @@ export type DecodeBase64UrlError = DOMException;
 export function decodeBase64UrlFp(value: string): E.Either<DecodeBase64UrlError, string> {
   return E.tryCatch(() => {
     return decodeURIComponent(
-      atob(value)
-        .replace(/-/g, '+')
-        .replace(/_/g, '/')
+      atob(
+        value
+          .replace(/-/g, '+')
+          .replace(/_/g, '/'),
+      )
         .split('')
         .map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
         .join(''),
