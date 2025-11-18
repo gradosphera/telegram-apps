@@ -79,7 +79,7 @@ export class DeviceStorage {
         TE.map(() => undefined),
       );
     });
-    this.removeItemFp = wrapSupportedTask(key => {
+    this.deleteItemFp = wrapSupportedTask(key => {
       return this.setItemFp(key, null);
     });
     this.clearFp = wrapSupportedTask(() => {
@@ -91,7 +91,7 @@ export class DeviceStorage {
 
     this.getItem = throwifyWithChecksFp(this.getItemFp);
     this.setItem = throwifyWithChecksFp(this.setItemFp);
-    this.removeItem = throwifyWithChecksFp(this.removeItemFp);
+    this.deleteItem = throwifyWithChecksFp(this.deleteItemFp);
     this.clear = throwifyWithChecksFp(this.clearFp);
   }
 
@@ -127,15 +127,15 @@ export class DeviceStorage {
     * Removes a key from the storage.
     * @since Mini Apps v9.0
     */
-  readonly removeItemFp: WithChecksFp<
+  readonly deleteItemFp: WithChecksFp<
     (key: string) => TE.TaskEither<DeviceStorageError, void>,
     true
   >;
 
   /**
-   * @see removeItemFp
+   * @see deleteItemFp
    */
-  readonly removeItem: WithChecks<(key: string) => Promise<void>, true>;
+  readonly deleteItem: WithChecks<(key: string) => Promise<void>, true>;
 
   /**
     * Removes all keys from the storage.
