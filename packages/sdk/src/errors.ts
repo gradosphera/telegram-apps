@@ -21,6 +21,12 @@ export class CSSVarsBoundError extends errorClass(
 ) {
 }
 
+export class DeviceStorageMethodError extends errorClassWithData<
+  { error: string },
+  [error: string]
+>('DeviceStorageError', error => ({ error }), error => [error]) {
+}
+
 export class NotAvailableError extends errorClass<[message: string]>(
   'NotAvailableError',
   msgToTuple,
