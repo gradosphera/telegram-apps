@@ -1,5 +1,5 @@
-import { snakeToCamelObjKeys } from '@/casing/snakeToCamelObjKeys.js';
 import type { SnakeToCamelCase } from '@/casing/snakeToCamel.js';
+import { snakeToCamelObjKeys } from '@/casing/snakeToCamelObjKeys.js';
 
 export type DeepConvertSnakeKeysToCamelCase<T> = T extends infer U
   ? U extends object

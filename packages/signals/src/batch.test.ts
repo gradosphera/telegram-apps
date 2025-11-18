@@ -1,8 +1,8 @@
 import { expect, it, vi } from 'vitest';
 
-import { signal } from './signal.js';
-import { computed } from './computed.js';
 import { batch } from './batch.js';
+import { computed } from './computed.js';
+import { signal } from './signal.js';
 
 it('should call subscriber only once if several signals were changed', () => {
   const a = signal(1);

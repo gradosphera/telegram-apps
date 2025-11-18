@@ -1,5 +1,5 @@
-import { collectSignal } from './computed.js';
 import { runInBatchMode } from './batch.js';
+import { collectSignal } from './computed.js';
 
 export type SubscribeListenerFn<T> = (current: T, previous: T) => void;
 export type RemoveListenerFn = () => void;
