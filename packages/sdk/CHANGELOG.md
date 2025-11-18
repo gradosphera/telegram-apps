@@ -1,5 +1,17 @@
 # @tma.js/sdk
 
+## 3.1.0
+
+### Minor Changes
+
+- 6b6218d: Implement `DeviceStorage` and `SecureStorage`.
+
+### Patch Changes
+
+- Updated dependencies [6fc38d4]
+- Updated dependencies [a5333d9]
+  - @tma.js/bridge@2.2.0
+
 ## 3.0.8
 
 ### Patch Changes

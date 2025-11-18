@@ -1,5 +1,15 @@
 # @tma.js/bridge
 
+## 2.2.0
+
+### Minor Changes
+
+- 6fc38d4: Implement the `request2` function - a better alternative for `request`.
+
+### Patch Changes
+
+- a5333d9: Properly replace escaped symbols on value in `decodeBase64UrlFp`.
+
 ## 2.1.3
 
 ### Patch Changes
