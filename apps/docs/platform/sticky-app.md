@@ -6,7 +6,7 @@ Starting from the Mini Apps version **7.7**, you are able to prevent the applica
 closing due to swipe down by using a special method. 
 
 - [Mini Apps method](methods.md#web-app-setup-swipe-behavior)
-- [@telegram-apps/sdk component](../packages/telegram-apps-sdk/2-x/components/swipe-behavior.md)
+- [@tma.js/sdk component](../packages/tma-js-sdk/features/swipe-behavior)
 
 :::
 
@@ -74,7 +74,7 @@ Here is the HTML and CSS you can use:
       My application goes here.
     </div>
   </div>
-  <script src="https://unpkg.com/@telegram-apps/sdk@1.0.0/dist/index.iife.js"></script>
+  <script src="https://unpkg.com/@tma.js/sdk@3.1.0/dist/index.iife.js"></script>
   <script>
     (function() {
       var { retrieveLaunchParams, postEvent } = window.telegramApps.sdk;

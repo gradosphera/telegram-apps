@@ -9,7 +9,7 @@ First of all, it is required to begin with the transmitting init data from the c
 using this code:
 
 ```typescript
-import { retrieveRawInitData } from '@telegram-apps/sdk'
+import { retrieveRawInitData } from '@tma.js/sdk'
 
 const initDataRaw = retrieveRawInitData()
 
@@ -37,7 +37,7 @@ authorizes the user.
 The Node.js example uses [express](https://www.npmjs.com/package/express) to process HTTP requests.
 
 ```typescript
-import { validate, parse, type InitData } from '@telegram-apps/init-data-node';
+import { validate, parse, type InitData } from '@tma.js/init-data-node';
 import express, {
   type ErrorRequestHandler,
   type RequestHandler,

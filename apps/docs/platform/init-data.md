@@ -15,10 +15,10 @@ and init data specifically.
 ## Retrieving
 
 To extract init data, a developer can use the `retrieveLaunchParams` function
-from [@telegram-apps/sdk](../packages/telegram-apps-sdk/2-x).
+from [@tma.js/sdk](../packages/tma-js-sdk).
 
 ```typescript
-import { retrieveLaunchParams } from '@telegram-apps/sdk';
+import { retrieveLaunchParams } from '@tma.js/sdk';
 
 const { initDataRaw, initData } = retrieveLaunchParams();
 ```
@@ -52,7 +52,7 @@ carried out on the server side.
 Here is how a developer could send init data to server:
 
 ```typescript
-import { retrieveLaunchParams } from '@telegram-apps/sdk';
+import { retrieveLaunchParams } from '@tma.js/sdk';
 
 const { initDataRaw } = retrieveLaunchParams();
 
@@ -82,7 +82,7 @@ and used in the future code execution.
 > [!TIP]
 > To avoid possible problems related to the init data validation process, we recommend utilizing
 > well-established and tested packages:
-> - For Node: [@telegram-apps/init-data-node](../packages/telegram-apps-init-data-node)
+> - For Node: [@tma.js/init-data-node](../packages/tma-js-init-data-node)
 > - For GoLang: [init-data-golang](../packages/init-data-golang.md)
 
 ### Using Telegram Bot Token

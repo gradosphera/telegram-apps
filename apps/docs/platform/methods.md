@@ -79,19 +79,19 @@ window.external.notify(data);
 ## Calling Methods
 
 Handling all possible environments for a developer's application can be challenging. To simplify
-this process, the community developed the [@telegram-apps/sdk](../packages/telegram-apps-sdk/2-x)
+this process, the community developed the [@tma.js/sdk](../packages/tma-js-sdk)
 package, which greatly eases integration.
 
 Here's how to use it:
 
 ```ts
-import { postEvent } from '@telegram-apps/sdk';
+import { postEvent } from '@tma.js/sdk';
 
 postEvent('web_app_set_header_color', { color_key: 'bg_color' });
 ```
 
 You can learn more about calling methods in the
-package's [documentation](../packages/telegram-apps-bridge/events.md#calling-methods).
+package's [documentation](../packages/tma-js-bridge/events.md#calling-methods).
 
 ## Available Methods
 
