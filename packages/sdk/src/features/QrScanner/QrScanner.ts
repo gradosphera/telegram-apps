@@ -74,7 +74,7 @@ export class QrScanner {
     const wrapSupportedTask = createWithChecksFp({ ...wrapOptions, returns: 'task' });
 
     const isOpened = signal(false);
-    const toggleClosed = () => {
+    const setClosed = () => {
       isOpened.set(false);
     };
 
@@ -97,25 +97,37 @@ export class QrScanner {
       );
     });
     this.closeFp = wrapSupportedEither(() => {
-      return pipe(postEvent('web_app_close_scan_qr_popup'), E.map(toggleClosed));
+      return pipe(postEvent('web_app_close_scan_qr_popup'), E.map(setClosed));
     });
     this.openFp = wrapSupportedTask(options => {
       return pipe(
-        this.isOpened()
+        isOpened()
           ? TE.left(new ConcurrentCallError('The QR Scanner is already opened'))
           : async () => postEvent('web_app_open_scan_qr_popup', { text: options.text }),
         TE.chainW(() => {
+          isOpened.set(true);
           const [addToCleanup, cleanup] = createCbCollector();
-          const withCleanup = <T>(value: T): T => {
+          const onSettled = <T>(value: T): T => {
             cleanup();
+            isOpened.set(false);
             return value;
           };
 
           return pipe(
             BetterTaskEither<never, void>(resolve => {
-              addToCleanup(onClosed(resolve), onTextReceived(options.onCaptured));
+              addToCleanup(
+                // The scanner was closed externally.
+                onClosed(resolve),
+                // The scanner was closed internally.
+                isOpened.sub(isOpenedValue => {
+                  if (!isOpenedValue) {
+                    resolve();
+                  }
+                }),
+                onTextReceived(options.onCaptured),
+              );
             }, options),
-            TE.mapBoth(withCleanup, withCleanup),
+            TE.mapBoth(onSettled, onSettled),
           );
         }),
       );
