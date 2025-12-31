@@ -1,5 +1,11 @@
 # @tma.js/sdk
 
+## 3.1.4
+
+### Patch Changes
+
+- 3f233d2: Export request2 and request2fp.
+
 ## 3.1.3
 
 ### Patch Changes
