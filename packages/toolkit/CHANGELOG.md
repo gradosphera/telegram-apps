@@ -1,5 +1,11 @@
 # @tma.js/toolkit
 
+## 1.0.4
+
+### Patch Changes
+
+- 805c0fa: Simplify usage of fp-ts to potentially avoid building problems in some applications.
+
 ## 1.0.3
 
 ### Patch Changes

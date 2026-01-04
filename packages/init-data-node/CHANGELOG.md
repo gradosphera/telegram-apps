@@ -1,5 +1,14 @@
 # @tma.js/init-data-node
 
+## 2.0.6
+
+### Patch Changes
+
+- 805c0fa: Simplify usage of fp-ts to potentially avoid building problems in some applications.
+- Updated dependencies [805c0fa]
+  - @tma.js/transformers@1.1.3
+  - @tma.js/toolkit@1.0.4
+
 ## 2.0.5
 
 ### Patch Changes
