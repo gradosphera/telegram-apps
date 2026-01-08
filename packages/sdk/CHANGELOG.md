@@ -1,5 +1,11 @@
 # @tma.js/sdk
 
+## 3.1.6
+
+### Patch Changes
+
+- ae53859: Update README.md
+
 ## 3.1.5
 
 ### Patch Changes
