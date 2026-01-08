@@ -1,5 +1,12 @@
 # @tma.js/sdk-svelte
 
+## 1.0.15
+
+### Patch Changes
+
+- Updated dependencies [ae53859]
+  - @tma.js/sdk@3.1.6
+
 ## 1.0.14
 
 ### Patch Changes
