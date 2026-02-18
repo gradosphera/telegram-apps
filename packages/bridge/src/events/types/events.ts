@@ -505,18 +505,18 @@ export interface Events {
   /**
    * Failed to send a prepared message.
    * @since 8.0
-   * @see https://docs.telegram-mini-apps.com/platform/events#prepare-message-failed
+   * @see https://docs.telegram-mini-apps.com/platform/events#prepared-message-failed
    */
   prepared_message_failed: {
     /**
      * Occurred error.
      */
-    error: string;
+    error: 'USER_DECLINED' | string;
   };
   /**
    * A prepared message was sent.
    * @since 8.0
-   * @see https://docs.telegram-mini-apps.com/platform/events#prepare-message-sent
+   * @see https://docs.telegram-mini-apps.com/platform/events#prepared-message-sent
    */
   prepared_message_sent: never;
   /**
